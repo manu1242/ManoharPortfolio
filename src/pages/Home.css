@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+.sidebar {
+    background-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.profile-pic {
+    width: 450px;
+    height: auto;
+    max-height: 330px;
+    border-radius: 15%;
+    object-fit: contain;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(4, 244, 248, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(174, 218, 232, 0.3);
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #dadada;
+}
+
+.title {
+    font-size: 14px;
+    color: #dadada;
+    margin: 5px 0 20px 0;
+}
+
+.content {
+    color: aliceblue;
+    background-color: #030303;
+    padding: 40px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+}
+
+.content h2 {
+    font-size: 18px;
+    color: #f0eded;
+    margin: 0 0 20px 0;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #056f99;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.buttons .btn-primary {
+    background-color: #025657;
+    color: #fff;
+}
+
+.buttons .btn-secondary {
+    background-color: #fff;
+    color: #065d76;
+}
+
+.content p {
+    font-size: 14px;
+    color: #e0dede;
+    line-height: 1.6;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icons a {
+    color: #dadada;
+    margin: 0 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
