@@ -15,6 +15,10 @@ body {
     position: relative;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar::before {
@@ -28,15 +32,14 @@ body {
 }
 
 .profile-pic {
-    width: 450px;
+    width: 100%; /* Changed to 100% for responsiveness */
+    max-width: 450px; /* Maintain a max width */
     height: auto;
     max-height: 330px;
     border-radius: 15%;
     object-fit: contain;
     margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
     padding: 0;
     box-shadow: 0 4px 8px rgba(4, 244, 248, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -63,19 +66,22 @@ body {
 .content {
     color: aliceblue;
     background-color: #030303;
-    padding: 40px;
+    padding: 20px; /* Reduced padding for better mobile fit */
     box-sizing: border-box;
     flex-grow: 1;
     text-align: left;
+    width: 100%; /* Ensure content takes full width */
+    max-width: 800px; /* Maintain a max width */
+    margin: 0 auto; /* Center content */
 }
 
 .content h1 {
-    font-size: 36px;
+    font-size: 28px; /* Reduced for better mobile visibility */
     margin: 0 0 10px 0;
 }
 
 .content h2 {
-    font-size: 18px;
+    font-size: 16px; /* Adjusted for mobile */
     color: #f0eded;
     margin: 0 0 20px 0;
 }
@@ -85,7 +91,7 @@ body {
 }
 
 .buttons .btn {
-    padding: 10px 20px;
+    padding: 10px 15px; /* Adjusted padding */
     font-size: 14px;
     border: 1px solid #056f99;
     border-radius: 5px;
@@ -127,12 +133,55 @@ body {
     color: #ffffff;
 }
 
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
+    .profile-pic {
+        max-width: 80%; /* Allow larger percentage on smaller screens */
     }
 
     .content {
-        width: 100%;
+        padding: 15px; /* Less padding on mobile */
+    }
+
+    .name {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .title {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+
+    .content h1 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+
+    .content h2 {
+        font-size: 14px; /* Smaller subheading for mobile */
+    }
+}
+
+@media (max-width: 360px) {
+    .profile-pic {
+        max-width: 90%; /* Allow more width on very small screens */
+    }
+
+    .content {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .name {
+        font-size: 18px; /* Further reduced font size */
+    }
+
+    .title {
+        font-size: 10px; /* Further reduced font size */
+    }
+
+    .content h1 {
+        font-size: 20px; /* Further reduced heading size */
+    }
+
+    .content h2 {
+        font-size: 12px; /* Further reduced subheading size */
     }
 }
