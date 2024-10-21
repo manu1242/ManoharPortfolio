@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Weather-App',
+    title: 'WeatherApp',
     description: 'The Weather App is a dynamic web application designed to provide real-time weather information for any location worldwide. Built using React, JavaScript, HTML, CSS, this app allows users to search for cities and retrieve current weather data, including temperature, humidity, wind speed, and weather conditions. Check it out!',
     link: 'https://cloneweather.netlify.app/',
     icon: <i className="fas fa-cloud-sun"></i>,
