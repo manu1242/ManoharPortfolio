@@ -8,7 +8,7 @@ const Home = () => {
 
     
     const handleResumeClick = () => {
-        window.open(`${process.env.PUBLIC_URL}/"C:\Users\manoh\OneDrive\back up\OneDrive\Desktop\Manohar Resume.pdf"`, '_blank');
+        window.open(`${process.env.PUBLIC_URL}/"Manohar Resume.pdf"`, '_blank');
     };
 
     const handleProjectsClick = () => {
