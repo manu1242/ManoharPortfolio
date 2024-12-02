@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import "./Contact.css";
 
 const Contact = () => {
-  // State to hold the form data
+ 
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -11,31 +11,31 @@ const Contact = () => {
     message: "",
   });
 
-  // State to track if the form is submitting
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle changes in the form inputs
+  
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
-  // Handle form submission
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Indicate form is being submitted
+    setIsSubmitting(true);
 
-    const SERVICE_ID = "service_5kh4s9h"; // Your EmailJS Service ID
-    const TEMPLATE_ID = "template_kclp4g4"; // Your EmailJS Template ID
-    const USER_ID = "E-eZxBmVLMFLjwdvA"; // Your EmailJS User ID
+    const SERVICE_ID = "service_5kh4s9h"; 
+    const TEMPLATE_ID = "template_kclp4g4"; 
+    const USER_ID = "E-eZxBmVLMFLjwdvA"; 
 
-    // Send email using EmailJS
+    
     emailjs
       .send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          email: formData.email, // Pass form data to template variables
+          email: formData.email, 
           name: formData.name,
           address: formData.address,
           message: formData.message,
@@ -45,16 +45,16 @@ const Contact = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!"); // Show success alert
+          alert("Message sent successfully!"); 
         },
         (error) => {
           console.error("FAILED...", error);
-          alert("Failed to send the message. Please try again."); // Show error alert
+          alert("Failed to send the message. Please try again."); 
         }
       )
       .finally(() => {
-        setIsSubmitting(false); // End the submission process
-        setFormData({ email: "", name: "", address: "", message: "" }); // Clear form after submission
+        setIsSubmitting(false); 
+        setFormData({ email: "", name: "", address: "", message: "" }); 
       });
   };
 
