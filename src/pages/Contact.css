@@ -10,7 +10,7 @@ html, body {
     flex-direction: row;
     width: 80%; 
     max-width: 500px; 
-    max-height: 80vh; 
+    max-height: 65vh; 
     margin: auto; 
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -26,14 +26,14 @@ html, body {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        width: 70%;
+        width: 60%;
     }
 }
 
 @media (max-width: 478px) {
     .container {
         flex-direction: column;
-        width: 65%; 
+        width: 60%; 
         padding: 10px; 
     }
 }
@@ -41,7 +41,7 @@ html, body {
 @media (max-width: 360px) {
     .container {
         flex-direction: column;
-        width: 65%;
+        width: 58%;
         padding: 10px;
     }
 }
