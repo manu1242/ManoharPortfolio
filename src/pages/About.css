@@ -11,14 +11,14 @@
     font-size: 48px;
     margin-bottom: 40px;
     color: whitesmoke;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    text-shadow: 0 0 5px #6f7c7c, 0 0 9px #6f7c7c;
 }
 .skills-section h2 {
     font-size: 32px;
     margin-bottom: 20px;
     color: whitesmoke;
     text-align: center;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    text-shadow: 0 0 5px #647676, 0 0 9px #667a7a;
 }
 .skills-section {
     margin: 40px 0;
@@ -52,7 +52,7 @@
 
 .skill-box:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    box-shadow: 0 0 9px #00ffff, 0 0 10px #00ffff;
 }
 
 ul {

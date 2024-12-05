@@ -6,10 +6,46 @@ body {
     flex-direction: column;
     height: 100vh;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
+.bouncing-ball {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(45deg, #4caf50, #056f99, #e91e63, #ffeb3b);
+    background-size: 400% 400%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 2s infinite ease-in-out, colorChange 3s infinite;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); 
+    filter: blur(10px); 
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-150px);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 .sidebar {
-    background-color: transparent;
+    background-color:transparent;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
@@ -19,6 +55,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: calc(100vh - 50px);
 }
 
 .sidebar::before {
@@ -31,9 +68,14 @@ body {
     background-color: transparent;
 }
 
+
+
+
+
+
 .profile-pic {
-    width: 100%; /* Changed to 100% for responsiveness */
-    max-width: 450px; /* Maintain a max width */
+    width: 100%;
+    max-width: 450px;
     height: auto;
     max-height: 330px;
     border-radius: 15%;
@@ -66,22 +108,30 @@ body {
 .content {
     color: aliceblue;
     background-color: #030303;
-    padding: 20px; /* Reduced padding for better mobile fit */
+    padding: 20px;
     box-sizing: border-box;
     flex-grow: 1;
     text-align: left;
-    width: 100%; /* Ensure content takes full width */
-    max-width: 800px; /* Maintain a max width */
-    margin: 0 auto; /* Center content */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .content h1 {
-    font-size: 28px; /* Reduced for better mobile visibility */
+    font-size: 28px;
     margin: 0 0 10px 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: transparent;
+    background: linear-gradient(90deg, #4caf50, #056f99, #e91e63, #ffeb3b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: animateText 2s linear infinite;
+    background-size: 200%;
 }
 
 .content h2 {
-    font-size: 16px; /* Adjusted for mobile */
+    font-size: 16px;
     color: #f0eded;
     margin: 0 0 20px 0;
 }
@@ -91,7 +141,7 @@ body {
 }
 
 .buttons .btn {
-    padding: 10px 15px; /* Adjusted padding */
+    padding: 10px 15px;
     font-size: 14px;
     border: 1px solid #056f99;
     border-radius: 5px;
@@ -110,13 +160,14 @@ body {
 }
 
 .content p {
-    font-size: 14px;
-    color: #e0dede;
+    
+    font-size: 17px;
+    color: #a7a7a7;
     line-height: 1.6;
 }
 
 .social-icons {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -126,62 +177,77 @@ body {
     color: #dadada;
     margin: 0 10px;
     transition: transform 0.3s, color 0.3s;
+    font-size: 26px; 
 }
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #ffffff;
+    color: #3d3b3b;
 }
 
-/* Responsive Design for Smaller Screens */
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #2f4652;
+}
+
+@keyframes animateText {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
 @media (max-width: 768px) {
     .profile-pic {
-        max-width: 80%; /* Allow larger percentage on smaller screens */
+        max-width: 80%;
     }
 
     .content {
-        padding: 15px; /* Less padding on mobile */
+        padding: 15px;
     }
 
     .name {
-        font-size: 20px; /* Smaller font size for mobile */
+        font-size: 20px;
     }
 
     .title {
-        font-size: 12px; /* Smaller font size for mobile */
+        font-size: 12px;
     }
 
     .content h1 {
-        font-size: 24px; /* Smaller heading for mobile */
+        font-size: 24px;
     }
 
     .content h2 {
-        font-size: 14px; /* Smaller subheading for mobile */
+        font-size: 14px;
     }
 }
 
 @media (max-width: 360px) {
     .profile-pic {
-        max-width: 90%; /* Allow more width on very small screens */
+        max-width: 90%;
     }
 
     .content {
-        padding: 10px; /* Further reduced padding */
+        padding: 10px;
     }
 
     .name {
-        font-size: 18px; /* Further reduced font size */
+        font-size: 18px;
     }
 
     .title {
-        font-size: 10px; /* Further reduced font size */
+        font-size: 10px;
     }
 
     .content h1 {
-        font-size: 20px; /* Further reduced heading size */
+        font-size: 20px;
     }
 
     .content h2 {
-        font-size: 12px; /* Further reduced subheading size */
+        font-size: 12px;
     }
 }
