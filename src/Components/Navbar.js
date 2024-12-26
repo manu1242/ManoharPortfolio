@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Styles/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -32,10 +33,34 @@ const Navbar = () => {
         ☰
       </button>
       <div className={`MenuLinks ${isOpen ? 'open' : ''}`}>
-        <Link to="/" className="Menulist" onClick={toggleMenu}>Home</Link>
-        <Link to="/about" className="Menulist" onClick={toggleMenu}>About</Link>
-        <Link to="/projects" className="Menulist" onClick={toggleMenu}>Projects</Link>
-        <Link to="/contact" className="Menulist" onClick={toggleMenu}>Contact</Link>
+        <Link
+          to="/"
+          className={`Menulist ${location.pathname === '/' ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
+          Home
+        </Link>
+        <Link
+          to="/about"
+          className={`Menulist ${location.pathname === '/about' ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
+          About
+        </Link>
+        <Link
+          to="/projects"
+          className={`Menulist ${location.pathname === '/projects' ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
+          Projects
+        </Link>
+        <Link
+          to="/contact"
+          className={`Menulist ${location.pathname === '/contact' ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
+          Contact
+        </Link>
       </div>
     </div>
   );

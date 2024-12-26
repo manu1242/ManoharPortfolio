@@ -2,6 +2,43 @@ html, body {
    
     margin: 0; 
 }
+h2 {
+    color: #00ffff; /* Cyan color for an appealing look */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+    font-size: 2rem; /* Base font size, will adjust for responsiveness */
+    text-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.5), 
+      0 0 20px rgba(0, 255, 255, 0.3); /* Glowing effect */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    font-weight: bold; /* Make the text bold */
+    letter-spacing: 2px; /* Add spacing between letters */
+    transition: transform 0.3s, color 0.3s; /* Smooth hover effects */
+  }
+  
+  
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.75rem; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.5rem; 
+      letter-spacing: 1px; 
+    }
+  }
+  
+  
+  h2:hover {
+    transform: scale(1.1); 
+    color: #ffffff; 
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.7), 
+      0 0 30px rgba(0, 255, 255, 0.5);
+  }
+  
 
 .container {
     display: flex;
