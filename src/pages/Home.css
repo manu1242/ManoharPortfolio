@@ -245,4 +245,14 @@ body {
     .content h2 {
         font-size: 12px;
     }
+    .bouncing-ball{
+        display: none;
+    }
+}
+@media (max-width: 560px) {
+    .bouncing-ball {
+        display: none;
+
+    }
+
 }
