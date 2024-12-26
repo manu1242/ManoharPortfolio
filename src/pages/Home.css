@@ -19,10 +19,9 @@ body {
     position: absolute;
     bottom: 20px;
     animation: bounce 2s infinite ease-in-out, colorChange 3s infinite;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); 
-    filter: blur(10px); 
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
+    filter: blur(10px);
 }
-
 
 @keyframes bounce {
     0%, 100% {
@@ -44,8 +43,9 @@ body {
         background-position: 0% 50%;
     }
 }
+
 .sidebar {
-    background-color:transparent;
+    background-color: transparent;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
@@ -67,11 +67,6 @@ body {
     height: 100%;
     background-color: transparent;
 }
-
-
-
-
-
 
 .profile-pic {
     width: 100%;
@@ -131,18 +126,10 @@ body {
 }
 
 .content h2 {
-    padding: 10px;
+    display: block;
     font-size: 20px;
     color: #f0eded;
-    margin: 0 0 20px 0;
-} 
-@keyframes animateText {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+    margin: 20px 0 20px 0;
 }
 
 .buttons {
@@ -169,7 +156,6 @@ body {
 }
 
 .content p {
-    
     font-size: 17px;
     color: #a7a7a7;
     line-height: 1.6;
@@ -186,14 +172,8 @@ body {
     color: #dadada;
     margin: 0 10px;
     transition: transform 0.3s, color 0.3s;
-    font-size: 26px; 
+    font-size: 26px;
 }
-
-.social-icons a:hover {
-    transform: scale(1.2);
-    color: #3d3b3b;
-}
-
 
 .social-icons a:hover {
     transform: scale(1.2);
@@ -212,6 +192,12 @@ body {
 @media (max-width: 768px) {
     .profile-pic {
         max-width: 80%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .content {

@@ -78,6 +78,13 @@
   .MenuButton {
     display: block;
   }
+  .Logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+  }
 
   .MenuLinks {
     font-size: 30px;
