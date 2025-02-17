@@ -36,6 +36,14 @@ const projects = [
     link: 'https://manohar-portfolio-five.vercel.app/',
     icon: <i className="fas fa-user-circle"></i>, 
 },
+{
+  id: 6,
+  title: 'Billing-Site',
+  description: 'A billing site built using the MERN stack is a web application that allows users to manage their invoices, track payments, and view billing details, all powered by a robust backend system utilizing MongoDB for data storage, Express.js for API endpoints, React.js for the interactive user interface, and Node.js as the server-side runtime. Check it out!',
+  link: 'https://store-project-ui.vercel.app',
+  icon: <i className="fas fa-sitemap"></i>, 
+},
+
 ];
 
 const Projects = () => {

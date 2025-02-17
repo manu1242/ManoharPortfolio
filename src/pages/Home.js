@@ -1,55 +1,56 @@
-import React from 'react';
-import './Home.css';
-
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import "./Home.css";
+import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleResumeClick = () => {
-        window.open(`${process.env.PUBLIC_URL}/ManoharResume.pdf`, '_blank');
-    };
+  const handleResumeClick = () => {
+    window.open(`${process.env.PUBLIC_URL}/Manohar (3).pdf`, "_blank");
+  };
 
-    const handleProjectsClick = () => {
-        navigate('/projects');
-    };
+  
 
-    return (
-       
-
-        <div className="sidebar">
-             
-            <div className="content">
-                <h1>Hello I'm Manohar</h1>
-                <h2>Here's who I am &amp; what I do</h2>
-                <div className="buttons">
-                    <button className="btn btn-primary" onClick={handleResumeClick}>
-                        RESUME
-                    </button>
-                    <button className="btn btn-secondary" onClick={handleProjectsClick}>
-                        PROJECTS
-                    </button>
-                </div>
-                <p>
-                    Energetic and self-motivated web developer with hands-on experience in creating dynamic and responsive applications.
-                    Proven track record in developing user-centric solutions, including a high-quality YouTube video downloader and a weather app.
-                    Experienced in collaborative coding projects and technical design, focusing on enhancing user experience and functionality. Committed to continuous learning and applying technical expertise to cross-functional projects.
-                </p>
-            </div>
-            <div className="bouncing-ball"></div>
-            <div className="social-icons">
-                <a href="https://www.facebook.com/manohar.yalla.9/" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/manohar-yalla/" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/manohar__y/" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
-                </a>
-            </div>
+  return (
+    <div className="landing-container">
+      <div className="landing-content">
+        <h1 className="title-text">
+          Hello, I'm <span className="emphasized">Manohar</span>
+        </h1>
+        <h2 className="typing-effect">
+          <Typewriter
+            words={["Front End Developer"]}
+            loop={8}
+            typeSpeed={90}
+            deleteSpeed={90}
+            delaySpeed={1000}
+          />
+        </h2>
+        <p className="intro-text">
+          Aspiring Web Developer skilled in building dynamic, responsive websites using HTML, CSS, JavaScript, React.js, and Python.
+          Passionate about optimizing front-end performance and ensuring seamless cross-device compatibility.
+        </p>
+        <div className="button-group">
+          <button className="action-btn primary" onClick={handleResumeClick}>
+            RESUME
+          </button>
+          
         </div>
-    );
+        <div className="icon-links">
+          <a href="https://www.facebook.com/manohar.yalla.9/" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/manohar-yalla/" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/manohar__y/" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

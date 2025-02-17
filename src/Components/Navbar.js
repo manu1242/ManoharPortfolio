@@ -1,22 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Styles/Navbar.css';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const Navbar = ({ scrollToSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+    setHasScrolled(window.scrollY > 0);
+    const sections = ['home', 'about', 'projects', 'contact'];
+    let currentSection = '';
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          currentSection = section;
+        }
+      }
+    });
+
+    setActiveSection(currentSection);
+  };
+
+  const handleNavClick = (section) => {
+    setIsMenuOpen(false);
+    scrollToSection(section);
   };
 
   useEffect(() => {
@@ -25,42 +41,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`Nav ${scrolled ? 'scrolled' : ''}`}>
-      <div className="Logo">
+    <div className={`custom-navbar ${hasScrolled ? 'custom-scrolled' : ''}`}>
+      <div className="custom-logo">
         <h1>Manohar Portfolio</h1>
       </div>
-      <button className="MenuButton" onClick={toggleMenu}>
+      <button className="custom-menu-toggle" onClick={toggleMenu}>
         ☰
       </button>
-      <div className={`MenuLinks ${isOpen ? 'open' : ''}`}>
-        <Link
-          to="/"
-          className={`Menulist ${location.pathname === '/' ? 'active' : ''}`}
-          onClick={toggleMenu}
-        >
+      <div className={`custom-menu-links ${isMenuOpen ? 'custom-open' : ''}`}>
+        <button className={`custom-menu-item ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleNavClick('home')}>
           Home
-        </Link>
-        <Link
-          to="/about"
-          className={`Menulist ${location.pathname === '/about' ? 'active' : ''}`}
-          onClick={toggleMenu}
-        >
+        </button>
+        <button className={`custom-menu-item ${activeSection === 'about' ? 'active' : ''}`} onClick={() => handleNavClick('about')}>
           About
-        </Link>
-        <Link
-          to="/projects"
-          className={`Menulist ${location.pathname === '/projects' ? 'active' : ''}`}
-          onClick={toggleMenu}
-        >
+        </button>
+        <button className={`custom-menu-item ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => handleNavClick('projects')}>
           Projects
-        </Link>
-        <Link
-          to="/contact"
-          className={`Menulist ${location.pathname === '/contact' ? 'active' : ''}`}
-          onClick={toggleMenu}
-        >
+        </button>
+        <button className={`custom-menu-item ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleNavClick('contact')}>
           Contact
-        </Link>
+        </button>
       </div>
     </div>
   );
