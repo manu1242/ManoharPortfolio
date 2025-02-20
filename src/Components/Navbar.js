@@ -7,6 +7,17 @@ const Navbar = ({ scrollToSection }) => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".custom-navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+      document.body.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+      document.body.classList.remove("scrolled");
+    }
+  });
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,6 +25,7 @@ const Navbar = ({ scrollToSection }) => {
 
   const handleScroll = () => {
     setHasScrolled(window.scrollY > 0);
+
     const sections = ['home', 'about', 'projects', 'contact'];
     let currentSection = '';
 
@@ -34,6 +46,7 @@ const Navbar = ({ scrollToSection }) => {
     setIsMenuOpen(false);
     scrollToSection(section);
   };
+
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
