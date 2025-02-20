@@ -1,18 +1,14 @@
 .projects-title {
-    width: 100%;
-    font-size: clamp(22px, 4.5vw, 34px);
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
     animation: fadeIn 1s ease-in-out;
 }
 
 .projects-container {
    
-    background-color: #dce7f7;
+    background-color: #1C1C24;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,8 +25,9 @@
 }
 
 .project-card {
-    background: linear-gradient(145deg, #2a2a40, #454575);
-    color: #ffffff;
+    border: 3px solid #454575;
+    background: transparent;
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -40,10 +37,10 @@
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgb(95, 102, 156),
-                0 0 25px rgba(46, 53, 86, 0.8);
-    background: linear-gradient(145deg, #505070, #3a3a56);
+    
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(55, 51, 111, 0.3);
+   
 }
 
 .project-title {
@@ -54,16 +51,17 @@
 }
 
 .project-description {
-    font-size: clamp(9px, 1vw, 9px);
-    margin-bottom: 12px;
-    opacity: 0.85;
-    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1em;
+    line-height: 1.875;
+    font-weight: 150;
     
 }
 
 .project-card a {
     font-size: 22px;
-    color: #201e3b;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
