@@ -1,6 +1,6 @@
 .about-container {
     height: auto;
-    background-color: #dce7f7;
+    background-color: #1C1C24;
     margin: auto;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
@@ -12,7 +12,7 @@
 .about-heading {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
     animation: fadeIn 1s ease-in-out;
 }
@@ -20,7 +20,7 @@
 .section-title {
     font-size: 2rem;
     margin: 20px 0;
-    color: #444;
+    color: rgb(255, 255, 255);
     position: relative;
     display: inline-block;
 }
@@ -36,8 +36,9 @@
 }
 
 .skill-box {
-    background: linear-gradient(135deg, #2a2a40, #555586);
-    color: white;
+    border: 3px solid #454575;
+    background: transparent;
+    color: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -46,7 +47,7 @@
 
 .skill-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(55, 51, 111, 0.3);
 }
 
 .skill-icon {
@@ -70,8 +71,10 @@ ul {
 }
 
 li {
+    color:#dedede;
     border-radius: 10px;
-    background: linear-gradient(135deg, #9d9dc3, #8a8ac0);
+    border: 3px solid #454575;
+    background: transparent;
     padding: 10px;
     margin: 5px 0;
     transition: background 0.5s ease-in-out, transform 0.3s ease-in-out;
@@ -80,8 +83,8 @@ li {
 }
 
 li:hover {
-    background: linear-gradient(135deg, #8a8ac0, #9d9dc3);
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(55, 51, 111, 0.3);
 }
 
 @keyframes fadeIn {
