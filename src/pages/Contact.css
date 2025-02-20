@@ -4,26 +4,25 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #dce7f7;
+    background-color: #1C1C24;
     padding: 20px;
 }
 
 .about-heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 30px; 
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
     animation: fadeIn 1s ease-in-out;
-    text-align: center; 
 }
 
 .contact-form {
-    background: #fff;
+    background:transparent;
     padding: 25px;
     width: 100%;
     max-width: 550px;
     border-radius: 12px;
-    box-shadow: 0px 10px 30px rgb(147, 181, 192);
+    box-shadow: 0px 10px 30px #292934;
     text-align: center;
 }
 
@@ -36,10 +35,11 @@
     font-weight: 500;
     display: block;
     margin-bottom: 5px;
-    color: #444;
+    color: rgb(255, 255, 255);
 }
 
 .input-group input, .input-group textarea {
+    background-color: transparent;
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -49,7 +49,7 @@
 }
 
 .input-group input:focus, .input-group textarea:focus {
-    border-color: #3a3d98;
+    border-color: rgb(140, 112, 255);
     outline: none;
 }
 
@@ -62,13 +62,13 @@ small {
     display: block;
     text-align: right;
     font-size: 12px;
-    color: #666;
+    color: rgb(255, 255, 255);
 }
 
 
 .done {
-    background: #2e2e2f;
-    color: white;
+    background: #35355f;
+    color: rgb(255, 255, 255);
     padding: 12px;
     border: none;
     width: 100%;
@@ -79,12 +79,12 @@ small {
     transition: 0.3s;
 }
 
-.done:hover {
-    background: #2a2b75;
+button:hover {
+    background:rgb(50, 41, 88);
 }
 
-.done:disabled {
-    background: #999;
+button:disabled {
+    background:rgb(140, 112, 255);
     cursor: not-allowed;
 }
 
@@ -113,8 +113,8 @@ small {
         padding: 20px;
     }
     
-    .done {
+    button {
         font-size: 14px;
-        padding: 10px;
+        padding: 10px
     }
 }
