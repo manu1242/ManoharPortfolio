@@ -1,9 +1,10 @@
 .landing-container {
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1e1e2e, #3a3a56);
+    background: #1C1C24;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -15,12 +16,14 @@
 }
 
 .title-text {
-    font-size: clamp(24px, 5vw, 36px);
-    font-weight: bold;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    color: rgb(140, 112, 255);
+    font-family: "Source Sans 3", sans-serif;
+    letter-spacing: 0.2rem;
+    width: calc(100% + 1.2rem);
+    font-size: 0.999em;
+    line-height: 1.725;
+    font-weight: 600;
 }
 
 .emphasized {
@@ -30,15 +33,23 @@
 }
 
 .typing-effect {
-    font-size: 24px;
-    color: #ffcc00;
-    font-weight: 500;
+    color: rgb(255, 255, 255);
+    font-family: "Source Sans 3", sans-serif;
+    letter-spacing: 0.025rem;
+    width: calc(100% + 0.095rem);
+    font-size: 3.25em;
+    line-height: 1.25;
+    font-weight: 600;
 }
+   
+
 
 .intro-text {
-    font-size: 16px;
-    margin: 20px 0;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1em;
+    line-height: 1.875;
+    font-weight: 300;
 }
 
 .button-group {
@@ -50,22 +61,52 @@
 }
 
 .action-btn {
-    background: #ffcc00;
-    color: black;
-
-    padding: 12px 20px;
-    border: none;
+    background: rgb(150, 125, 255);
+    padding: 17px 40px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
+    border: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    position: relative;
+ 
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.8s ease-in-out forwards;
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
 
+
+
 .action-btn:hover {
-    background-color: #d1e23b;;
-    transform: scale(1.1);
+    letter-spacing: 3px;
+  background-color: hsl(261, 62%, 49%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+.action-btn:active {
+    letter-spacing: 3px;
+  background-color: hsl(261, 50%, 57%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(123, 96, 175) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+   
 }
 
 .icon-links {
@@ -84,7 +125,7 @@
 
 .icon-links a:hover {
     transform: scale(1.2);
-    color: #ffcc00;
+    color: rgb(140, 112, 255);
 }
 
 @keyframes fadeEffect {
